@@ -3,7 +3,7 @@ Contributors: Donna D. Fontenot
 Tags: post metadata, sidebar widget
 Donate link: http://www.donnafontenot.com/contact-me/
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,7 +35,16 @@ A: Yes. Default styles can be overridden with your own custom styles. The follow
 .cmdcategories::before
 .cmdtags::before
 
-Uses the CSS ::before pseudo-element to control text before each metadata element. Override the defaults in your own custom css.
+Uses the CSS ::before pseudo-element to control text before each metadata element. Override the defaults in your own custom css. For example, the default text before the date is "Posted on:" If you wish to change that to "Article Date:", you would add the following style to your custom CSS.
+
+.cmddate::before { 
+    content: "Article Date: ";
+}
+
+The same concept applies to the other elements.
+
+Q: Can I show it only on pages or only on posts?
+A: You should use a plugin such as Conditional Widgets or any similar plugin to control where this widget is displayed. 
 
 == Screenshots ==
 1. Widget settings
@@ -43,10 +52,21 @@ Uses the CSS ::before pseudo-element to control text before each metadata elemen
 
 == Changelog ==
 
+= 1.1 =
+
+* Fixed blank author bug after WordPress 4.1 was released
+* Changed the default font sizes in cmdstyles.css from 10px to 12px
+* Removed category and tags from outputting on pages. These are post-only outputs.
+* Added more descriptive instructions
+
 = 1.0 =
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1 =
+
+* This version fixes the blank author bug introduced when WordPress 4.1 came out and made minor style and documentation changes. You should upgrade if your author name is no longer showing up in the widget.
 
 = 1.0 =
 * Initial release

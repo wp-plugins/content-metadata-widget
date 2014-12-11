@@ -66,6 +66,9 @@ class Content_Metadata_Widget extends WP_Widget
 ?>
 	
 	<p>
+	Select the items you want to have appear in sidebar / widget area on single posts and pages. Note that pages will never show categories and tags, even if checked, but posts will, because pages do not have categories or tags.
+	</p>
+	<p>
 	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Widget Title', 'content_metadata_widget'); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 	</p>
@@ -87,12 +90,12 @@ class Content_Metadata_Widget extends WP_Widget
 	
 	<p>
 	<input id="<?php echo $this->get_field_id('cmdcategories'); ?>" name="<?php echo $this->get_field_name('cmdcategories'); ?>" type="checkbox" value="1" <?php checked( '1', $cmdcategories ); ?> />
-	<label for="<?php echo $this->get_field_id('cmdcategories'); ?>"><?php _e('Categories', 'content_metadata_widget'); ?></label>
+	<label for="<?php echo $this->get_field_id('cmdcategories'); ?>"><?php _e('Post Categories', 'content_metadata_widget'); ?></label>
 	</p>
 	
 	<p>
 	<input id="<?php echo $this->get_field_id('cmdtags'); ?>" name="<?php echo $this->get_field_name('cmdtags'); ?>" type="checkbox" value="1" <?php checked( '1', $cmdtags ); ?> />
-	<label for="<?php echo $this->get_field_id('cmdtags'); ?>"><?php _e('Tags', 'content_metadata_widget'); ?></label>
+	<label for="<?php echo $this->get_field_id('cmdtags'); ?>"><?php _e('Post Tags', 'content_metadata_widget'); ?></label>
 	</p>
 	
 	<?php
@@ -150,7 +153,9 @@ class Content_Metadata_Widget extends WP_Widget
 						// Check if author checkbox is checked
 						if ($cmdauthor AND $cmdauthor == '1')
 							{
-								$showauthor = get_the_author($ID);
+								global $post;
+								$author_id=$post->post_author;
+								$showauthor = get_the_author_meta( 'display_name', $author_id );
 								echo '<div class="cmdauthor">' . $showauthor . '</div>';
 							}
 						
@@ -162,7 +167,7 @@ class Content_Metadata_Widget extends WP_Widget
 							}
 						
 						// Check if categories checkbox is checked
-						if ($cmdcategories AND $cmdcategories == '1')
+						if ($cmdcategories AND $cmdcategories == '1' AND !is_page())
 							{
 								echo '<div class="cmdcategories">';
 								$categories = get_the_category($ID);
@@ -181,7 +186,7 @@ class Content_Metadata_Widget extends WP_Widget
 						
 						
 						// Check if date checkbox is checked
-						if ($cmdtags AND $cmdtags == '1')
+						if ($cmdtags AND $cmdtags == '1' AND !is_page())
 							{
 								echo '<div class="cmdtags">';
 								$posttags = get_the_tags($ID);
