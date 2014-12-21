@@ -31,10 +31,6 @@ You should have received a copy of the GNU General Public License along with thi
  * Use the CSS ::before pseudo-element to control text before each metadata element
  */
  
-global $post;
-$ID=$post->ID;
-$author_id=$post->post_author;
-
 class Content_Metadata_Widget extends WP_Widget
 	{
 		
