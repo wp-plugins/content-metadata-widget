@@ -130,6 +130,10 @@ class Content_Metadata_Widget extends WP_Widget
 				echo $before_widget;
 				// Display the widget
 				
+				global $post;
+				$ID=$post->ID;
+				$author_id=$post->post_author;
+				
 				if (is_single() || is_page())
 					{
 						
