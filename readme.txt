@@ -52,6 +52,10 @@ A: You should use a plugin such as Conditional Widgets or any similar plugin to 
 
 == Changelog ==
 
+= 1.2 =
+
+* Fixed a variable bug
+
 = 1.1 =
 
 * Fixed blank author bug after WordPress 4.1 was released

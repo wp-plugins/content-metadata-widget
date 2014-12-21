@@ -3,7 +3,7 @@
 Plugin Name: Content MetaData Widget
 Plugin URI: http://www.donnafontenot.com
 Description: Display the current page or post's metadata (title, author, publication date, categories, tags) in a sidebar widget, outside of "the loop". For now, the widget displays only when viewing single pages and posts. 
-Version: 1.1
+Version: 1.2
 Author: Donna D. Fontenot
 Author Email: donna@donnafontenot.com
 License: GPLv2 or later
@@ -30,6 +30,10 @@ You should have received a copy of the GNU General Public License along with thi
  * .content_metadata_widget_box (the surrounding widget box)
  * Use the CSS ::before pseudo-element to control text before each metadata element
  */
+ 
+global $post;
+$ID=$post->ID;
+$author_id=$post->post_author;
 
 class Content_Metadata_Widget extends WP_Widget
 	{
@@ -153,8 +157,6 @@ class Content_Metadata_Widget extends WP_Widget
 						// Check if author checkbox is checked
 						if ($cmdauthor AND $cmdauthor == '1')
 							{
-								global $post;
-								$author_id=$post->post_author;
 								$showauthor = get_the_author_meta( 'display_name', $author_id );
 								echo '<div class="cmdauthor">' . $showauthor . '</div>';
 							}
