@@ -54,7 +54,7 @@ A: You should use a plugin such as Conditional Widgets or any similar plugin to 
 
 = 1.3 =
 
-* Fix tag issue
+* Fix tag issues
 
 = 1.2 =
 
