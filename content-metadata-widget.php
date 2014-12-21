@@ -3,7 +3,7 @@
 Plugin Name: Content MetaData Widget
 Plugin URI: http://www.donnafontenot.com
 Description: Display the current page or post's metadata (title, author, publication date, categories, tags) in a sidebar widget, outside of "the loop". The widget displays only when viewing single pages and posts. 
-Version: 1.2
+Version: 1.3
 Author: Donna D. Fontenot
 Author Email: donna@donnafontenot.com
 License: GPLv2 or later
