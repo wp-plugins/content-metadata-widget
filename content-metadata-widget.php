@@ -164,7 +164,7 @@ class Content_Metadata_Widget extends WP_Widget
 						// Check if date checkbox is checked
 						if ($cmddate AND $cmddate == '1')
 							{
-								$showdate = get_the_date($d, $ID);
+								$showdate = get_the_date($ID);
 								echo '<div class="cmddate">' . $showdate . '</div>';
 							}
 						
