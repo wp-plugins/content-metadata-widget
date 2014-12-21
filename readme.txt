@@ -54,7 +54,7 @@ A: You should use a plugin such as Conditional Widgets or any similar plugin to 
 
 = 1.2 =
 
-* Fixed a variable bug
+* Variable bug fix 
 
 = 1.1 =
 
