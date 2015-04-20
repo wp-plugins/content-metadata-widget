@@ -3,7 +3,7 @@ Contributors: Donna D. Fontenot
 Tags: post metadata, sidebar widget
 Donate link: http://www.donnafontenot.com/contact-me/
 Requires at least: 3.8
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
